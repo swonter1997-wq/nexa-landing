@@ -1,0 +1,29 @@
+/* Сбрасываем стандартные отступы браузера */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Основные настройки страницы */
+body {
+    font-family: Arial, sans-serif;
+    background-color: #0f172a;
+    color: #ffffff;
+    line-height: 1.6;
+}
+
+/* Ссылки */
+a {
+    color: inherit;
+    text-decoration: none;
+}
+
+/* Ограничиваем ширину содержимого */
+header,
+main,
+footer {
+    width: 100%;
+    max-width: 1200px;
+    margin: 0 auto;
+}
