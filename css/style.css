@@ -196,6 +196,8 @@ nav a:hover {
     border-radius: 20px;
 
     box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
+
+    animation: cardFloat 4s ease-in-out infinite;
 }
 
 
@@ -443,53 +445,6 @@ nav a:hover {
     background-color: #6366f1;
 }
 /* =========================
-   CTA
-   ========================= */
-
-#contacts {
-    margin: 100px 40px;
-    padding: 80px 40px;
-
-    text-align: center;
-
-    background-color: #312e81;
-    border-radius: 24px;
-}
-
-#contacts h2 {
-    margin-bottom: 20px;
-
-    font-size: 42px;
-}
-
-#contacts p {
-    max-width: 600px;
-
-    margin: 0 auto 32px;
-
-    color: #cbd5e1;
-    font-size: 18px;
-}
-
-#contacts a {
-    display: inline-block;
-
-    padding: 14px 28px;
-
-    background-color: #ffffff;
-    color: #312e81;
-
-    border-radius: 10px;
-
-    font-weight: 700;
-
-    transition: transform 0.3s ease;
-}
-
-#contacts a:hover {
-    transform: translateY(-3px);
-}
-/* =========================
    FOOTER
    ========================= */
 
@@ -595,17 +550,6 @@ footer {
     }
 
 
-    /* CTA */
-
-    #contacts {
-        margin: 60px 20px;
-        padding: 60px 24px;
-    }
-
-    #contacts h2 {
-        font-size: 34px;
-    }
-
 
     /* FOOTER */
 
@@ -661,10 +605,369 @@ header nav {
                 padding 0.3s ease;
 }
 
-header nav.active {
-    max-height: 300px;
-    padding: 20px 0;
-    opacity: 1;
+    header nav.active {
+        max-height: 300px;
+        padding: 20px 0;
+        opacity: 1;
+    }
+.cta-content,
+#contact-form {
+    width: 100%;
+    min-width: 0;
+    max-width: 100%;
 }
+
+#contact-form input,
+#contact-form button {
+    width: 100%;
+    min-width: 0;
+    max-width: 100%;
+}
+.cta-content span {
+    font-size: 16px;
+}
+
+#contact-form {
+    width: 100%;
+}
+
+#contact-form input,
+#contact-form button {
+    width: 100%;
+    max-width: 100%;
+}
+}
+/* =========================
+   HERO ANIMATION
+   ========================= */
+
+.hero-content {
+    animation: heroContentAppear 0.8s ease forwards;
+}
+
+.hero-visual {
+    animation: heroVisualAppear 1s ease forwards;
+}
+
+
+/* Анимация появления текста */
+
+@keyframes heroContentAppear {
+
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+
+}
+
+
+/* Анимация появления карточки */
+
+@keyframes heroVisualAppear {
+
+    from {
+        opacity: 0;
+        transform: translateX(40px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+
+}
+@keyframes cardFloat {
+
+    0% {
+        transform: translateY(0);
+    }
+
+    50% {
+        transform: translateY(-10px);
+    }
+
+    100% {
+        transform: translateY(0);
+    }
+
+}
+
+/* =========================
+   CONTACT FORM
+   ========================= */
+
+
+.cta-content > p {
+    margin-bottom: 16px;
+
+    font-size: 14px;
+    font-weight: 700;
+    letter-spacing: 2px;
+
+    color: #c7d2fe;
+}
+
+.cta-content h2 {
+    margin-bottom: 20px;
+}
+
+.cta-content span {
+    display: block;
+
+    color: #cbd5e1;
+    font-size: 18px;
+}
+
+
+/* Форма */
+
+#contact-form {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+}
+
+#contact-form input {
+    width: 100%;
+
+    padding: 16px 18px;
+
+    background-color: #1e293b;
+    border: 1px solid #475569;
+    border-radius: 10px;
+
+    color: #ffffff;
+    font-size: 16px;
+
+    outline: none;
+
+    transition: border-color 0.3s ease;
+}
+
+#contact-form input:focus {
+    border-color: #818cf8;
+}
+
+#contact-form button {
+    padding: 16px;
+
+    border: none;
+    border-radius: 10px;
+
+    background-color: #ffffff;
+    color: #312e81;
+
+    font-size: 16px;
+    font-weight: 700;
+
+    cursor: pointer;
+
+    transition: transform 0.3s ease;
+}
+
+#contact-form button:hover {
+    transform: translateY(-2px);
+}
+
+#form-message {
+    min-height: 24px;
+
+    color: #c7d2fe;
+}
+
+/* =========================
+   CONTACTS
+   ========================= */
+
+#contacts {
+    margin: 100px 40px;
+    padding: 80px 40px;
+
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 60px;
+
+    text-align: left;
+
+    background-color: #312e81;
+    border-radius: 24px;
+}
+
+.cta-content > p {
+    margin-bottom: 16px;
+
+    font-size: 14px;
+    font-weight: 700;
+    letter-spacing: 2px;
+
+    color: #c7d2fe;
+}
+
+.cta-content h2 {
+    margin-bottom: 20px;
+
+    font-size: 42px;
+}
+
+.cta-content span {
+    display: block;
+
+    color: #cbd5e1;
+    font-size: 18px;
+}
+
+
+/* Форма */
+
+#contact-form {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+
+    width: 100%;
+    min-width: 0;
+}
+
+#contact-form input {
+    width: 100%;
+    min-width: 0;
+
+    padding: 16px 18px;
+
+    background-color: #1e293b;
+    border: 1px solid #475569;
+    border-radius: 10px;
+
+    color: #ffffff;
+    font-size: 16px;
+
+    outline: none;
+}
+
+#contact-form input:focus {
+    border-color: #818cf8;
+}
+
+#contact-form button {
+    width: 100%;
+
+    padding: 16px;
+
+    border: none;
+    border-radius: 10px;
+
+    background-color: #ffffff;
+    color: #312e81;
+
+    font-size: 16px;
+    font-weight: 700;
+
+    cursor: pointer;
+}
+
+#form-message {
+    min-height: 24px;
+
+    color: #c7d2fe;
+}
+
+
+/* =========================
+   CONTACTS MOBILE
+   ========================= */
+
+@media (max-width: 600px) {
+
+    #contacts {
+        display: flex !important;
+        flex-direction: column !important;
+
+        margin: 60px 20px;
+        padding: 60px 24px;
+
+        gap: 40px;
+
+        text-align: center;
+    }
+
+    .cta-content {
+        width: 100%;
+    }
+
+    .cta-content h2 {
+        font-size: 34px;
+    }
+
+    .cta-content span {
+        font-size: 16px;
+    }
+
+    #contact-form {
+        display: flex;
+        flex-direction: column;
+
+        width: 100%;
+        min-width: 0;
+    }
+
+    #contact-form input,
+    #contact-form button {
+        width: 100%;
+        min-width: 0;
+    }
+
+}
+/* =========================
+   FINAL MOBILE FIX
+   ========================= */
+
+@media (max-width: 600px) {
+
+    main #contacts {
+        display: grid !important;
+        grid-template-columns: minmax(0, 1fr) !important;
+
+        width: auto !important;
+        max-width: none !important;
+        min-width: 0 !important;
+
+        margin-left: 20px !important;
+        margin-right: 20px !important;
+
+        padding-left: 24px !important;
+        padding-right: 24px !important;
+
+        gap: 40px !important;
+    }
+
+    main #contacts .cta-content {
+        width: 100% !important;
+        min-width: 0 !important;
+        max-width: 100% !important;
+    }
+
+    main #contacts #contact-form {
+        display: flex !important;
+        flex-direction: column !important;
+
+        width: 100% !important;
+        min-width: 0 !important;
+        max-width: 100% !important;
+    }
+
+    main #contacts #contact-form input,
+    main #contacts #contact-form button {
+        width: 100% !important;
+        min-width: 0 !important;
+        max-width: 100% !important;
+
+        box-sizing: border-box !important;
+    }
 
 }
