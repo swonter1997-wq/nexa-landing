@@ -462,3 +462,50 @@ footer {
     }
 
 }
+/* =========================
+   MOBILE MENU BUTTON
+   ========================= */
+
+.menu-button {
+    display: none;
+
+    background: none;
+    border: none;
+
+    color: #ffffff;
+    font-size: 28px;
+
+    cursor: pointer;
+}
+
+
+/* =========================
+   MOBILE MENU
+   ========================= */
+
+@media (max-width: 600px) {
+
+    header {
+        position: relative;
+    }
+
+    .menu-button {
+        display: block;
+    }
+
+    header nav {
+        display: none;
+
+        width: 100%;
+
+        flex-direction: column;
+        gap: 20px;
+
+        padding: 20px 0;
+    }
+
+    header nav.active {
+        display: flex;
+    }
+
+}
