@@ -32,18 +32,34 @@ footer {
     margin: 0 auto;
 }
 
+main {
+    padding-top: 80px;
+}
+
 
 /* =========================
    HEADER
    ========================= */
 
 header {
+    position: fixed;
+    top: 0;
+    left: 50%;
+    transform: translateX(-50%);
+
+    width: 100%;
+    max-width: 1200px;
     min-height: 80px;
+
     padding: 0 40px;
 
     display: flex;
     align-items: center;
     justify-content: space-between;
+
+    z-index: 1000;
+
+    background-color: #0f172a;
 }
 
 header > p {
@@ -667,15 +683,17 @@ footer {
     /* HEADER */
 
     header {
-        position: relative;
+        position: fixed;
+        top: 0;
+        left: 0;
+
+        width: 100%;
+        max-width: none;
 
         min-height: auto;
         padding: 24px 20px;
 
-        display: flex;
-        flex-direction: row;
-        flex-wrap: wrap;
-        justify-content: space-between;
+        transform: none;
     }
 
     .menu-button {
