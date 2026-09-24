@@ -37,3 +37,16 @@ contactForm.addEventListener("submit", function (event) {
     contactForm.reset();
 
 });
+const faqQuestions = document.querySelectorAll(".faq-question");
+
+faqQuestions.forEach(function (question) {
+
+    question.addEventListener("click", function () {
+
+        const faqItem = question.parentElement;
+
+        faqItem.classList.toggle("active");
+
+    });
+
+});
