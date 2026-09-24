@@ -1,11 +1,17 @@
-/* Сбрасываем стандартные отступы браузера */
+/* =========================
+   BASE
+   ========================= */
+
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
 }
 
-/* Основные настройки страницы */
+html {
+    scroll-behavior: smooth;
+}
+
 body {
     font-family: Arial, sans-serif;
     background-color: #0f172a;
@@ -13,13 +19,11 @@ body {
     line-height: 1.6;
 }
 
-/* Ссылки */
 a {
     color: inherit;
     text-decoration: none;
 }
 
-/* Ограничиваем ширину содержимого */
 header,
 main,
 footer {
@@ -27,6 +31,8 @@ footer {
     max-width: 1200px;
     margin: 0 auto;
 }
+
+
 /* =========================
    HEADER
    ========================= */
@@ -40,21 +46,18 @@ header {
     justify-content: space-between;
 }
 
-/* Логотип */
 header > p {
     font-size: 28px;
     font-weight: 700;
     letter-spacing: 1px;
 }
 
-/* Навигация */
 nav {
     display: flex;
     align-items: center;
     gap: 32px;
 }
 
-/* Ссылки меню */
 nav a {
     font-size: 16px;
     color: #cbd5e1;
@@ -62,10 +65,23 @@ nav a {
     transition: color 0.3s ease;
 }
 
-/* Наведение мыши */
 nav a:hover {
     color: #ffffff;
 }
+
+.menu-button {
+    display: none;
+
+    background: none;
+    border: none;
+
+    color: #ffffff;
+    font-size: 28px;
+
+    cursor: pointer;
+}
+
+
 /* =========================
    HERO
    ========================= */
@@ -80,15 +96,11 @@ nav a:hover {
     gap: 60px;
 }
 
-
-/* Левая часть */
-
 .hero-content {
     max-width: 750px;
+
+    animation: heroContentAppear 0.8s ease forwards;
 }
-
-
-/* Маленький заголовок */
 
 .hero-label {
     margin-bottom: 20px;
@@ -100,9 +112,6 @@ nav a:hover {
     color: #818cf8;
 }
 
-
-/* Главный заголовок */
-
 .hero-content h1 {
     margin-bottom: 24px;
 
@@ -111,9 +120,6 @@ nav a:hover {
     letter-spacing: -2px;
 }
 
-
-/* Описание */
-
 .hero-description {
     max-width: 620px;
     margin-bottom: 36px;
@@ -121,9 +127,6 @@ nav a:hover {
     font-size: 20px;
     color: #94a3b8;
 }
-
-
-/* Кнопка */
 
 .hero-button {
     display: inline-block;
@@ -146,9 +149,6 @@ nav a:hover {
     transform: translateY(-2px);
 }
 
-
-/* Правая визуальная часть */
-
 .hero-visual {
     min-height: 360px;
 
@@ -157,10 +157,9 @@ nav a:hover {
     justify-content: center;
 
     position: relative;
+
+    animation: heroVisualAppear 1s ease forwards;
 }
-
-
-/* Светящийся фон */
 
 .hero-visual::before {
     content: "";
@@ -175,19 +174,14 @@ nav a:hover {
     background-color: #312e81;
 
     opacity: 0.5;
-
     filter: blur(60px);
 }
-
-
-/* AI-карточка */
 
 .hero-card {
     position: relative;
     z-index: 1;
 
     width: 280px;
-
     padding: 32px;
 
     background-color: #1e293b;
@@ -199,7 +193,6 @@ nav a:hover {
 
     animation: cardFloat 4s ease-in-out infinite;
 }
-
 
 .hero-card span {
     display: block;
@@ -213,7 +206,6 @@ nav a:hover {
     color: #818cf8;
 }
 
-
 .hero-card strong {
     display: block;
 
@@ -222,10 +214,11 @@ nav a:hover {
     font-size: 48px;
 }
 
-
 .hero-card p {
     color: #94a3b8;
 }
+
+
 /* =========================
    FEATURES
    ========================= */
@@ -233,8 +226,6 @@ nav a:hover {
 #features {
     padding: 120px 40px;
 }
-
-/* Заголовок секции */
 
 .section-heading {
     max-width: 700px;
@@ -266,17 +257,11 @@ nav a:hover {
     font-size: 18px;
 }
 
-
-/* Сетка */
-
 .features-grid {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
     gap: 24px;
 }
-
-
-/* Карточка */
 
 .features-grid article {
     position: relative;
@@ -294,8 +279,10 @@ nav a:hover {
         border-color 0.3s ease;
 }
 
-
-/* Номер */
+.features-grid article:hover {
+    transform: translateY(-5px);
+    border-color: #6366f1;
+}
 
 .feature-number {
     margin-bottom: 60px;
@@ -306,25 +293,16 @@ nav a:hover {
     color: #818cf8;
 }
 
-
-/* Заголовок */
-
 .features-grid article h3 {
     margin-bottom: 14px;
 
     font-size: 24px;
 }
 
-
-/* Описание */
-
 .features-grid article p {
     color: #94a3b8;
     font-size: 16px;
 }
-
-
-/* Декоративный круг */
 
 .features-grid article::before {
     content: "";
@@ -343,28 +321,6 @@ nav a:hover {
 }
 
 
-/* Hover */
-
-.features-grid article:hover {
-    transform: translateY(-5px);
-    border-color: #6366f1;
-}
-/* =========================
-   ADAPTIVE
-   ========================= */
-
-/* Планшеты */
-@media (max-width: 900px) {
-
-    #about h1 {
-        font-size: 48px;
-    }
-
-    #features {
-        grid-template-columns: 1fr;
-    }
-
-}
 /* =========================
    PRICING
    ========================= */
@@ -385,7 +341,6 @@ nav a:hover {
     font-size: 42px;
 }
 
-/* Карточка тарифа */
 #pricing article {
     padding: 40px;
 
@@ -396,8 +351,9 @@ nav a:hover {
     display: flex;
     flex-direction: column;
 
-    transition: transform 0.3s ease,
-                border-color 0.3s ease;
+    transition:
+        transform 0.3s ease,
+        border-color 0.3s ease;
 }
 
 #pricing article:hover {
@@ -405,21 +361,18 @@ nav a:hover {
     border-color: #6366f1;
 }
 
-/* Название тарифа */
 #pricing h3 {
     margin-bottom: 16px;
 
     font-size: 28px;
 }
 
-/* Описание тарифа */
 #pricing article p:first-of-type {
     margin-bottom: 24px;
 
     color: #94a3b8;
 }
 
-/* Цена */
 #pricing article p:nth-of-type(2) {
     margin-bottom: 32px;
 
@@ -427,7 +380,6 @@ nav a:hover {
     font-weight: 700;
 }
 
-/* Кнопка тарифа */
 #pricing article a {
     width: fit-content;
 
@@ -444,550 +396,8 @@ nav a:hover {
 #pricing article a:hover {
     background-color: #6366f1;
 }
-/* =========================
-   FOOTER
-   ========================= */
 
-footer {
-    padding: 40px;
 
-    text-align: center;
-
-    color: #64748b;
-
-    border-top: 1px solid #1e293b;
-}
-/* =========================
-   MOBILE
-   ========================= */
-
-@media (max-width: 600px) {
-
-    /* HEADER */
-
-    header {
-        min-height: auto;
-        padding: 24px 20px;
-
-        flex-direction: column;
-        gap: 20px;
-    }
-
-    nav {
-        gap: 16px;
-        flex-wrap: wrap;
-        justify-content: center;
-    }
-
-    nav a {
-        font-size: 14px;
-    }
-
-
-    /* HERO */
-
-    #about {
-        min-height: auto;
-        padding: 80px 20px;
-
-        grid-template-columns: 1fr;
-        gap: 50px;
-    }
-
-    .hero-content h1 {
-        font-size: 40px;
-        letter-spacing: -1px;
-    }
-
-    .hero-description {
-        font-size: 18px;
-    }
-
-    .hero-visual {
-        min-height: 280px;
-    }
-
-    .hero-card {
-        width: 260px;
-    }
-
-    /* FEATURES */
-
-    #features {
-        padding: 80px 20px;
-    }
-
-    .section-heading h2 {
-        font-size: 34px;
-    }
-
-    .features-grid {
-        grid-template-columns: 1fr;
-    }
-
-    .features-grid article {
-        padding: 24px;
-    }
-
-    .feature-number {
-        margin-bottom: 40px;
-    }
-
-    /* PRICING */
-
-    #pricing {
-        padding: 80px 20px;
-
-        grid-template-columns: 1fr;
-    }
-
-    #pricing h2 {
-        font-size: 34px;
-    }
-
-    #pricing article {
-        padding: 28px;
-    }
-
-
-
-    /* FOOTER */
-
-    footer {
-        padding: 30px 20px;
-    }
-
-}
-/* =========================
-   MOBILE MENU BUTTON
-   ========================= */
-
-.menu-button {
-    display: none;
-
-    background: none;
-    border: none;
-
-    color: #ffffff;
-    font-size: 28px;
-
-    cursor: pointer;
-}
-
-
-/* =========================
-   MOBILE MENU
-   ========================= */
-
-@media (max-width: 600px) {
-
-    header {
-        position: relative;
-    }
-
-    .menu-button {
-        display: block;
-    }
-header nav {
-    width: 100%;
-
-    flex-direction: column;
-    gap: 20px;
-
-    padding: 0;
-
-    max-height: 0;
-    overflow: hidden;
-    opacity: 0;
-
-    transition: max-height 0.3s ease,
-                opacity 0.3s ease,
-                padding 0.3s ease;
-}
-
-    header nav.active {
-        max-height: 300px;
-        padding: 20px 0;
-        opacity: 1;
-    }
-.cta-content,
-#contact-form {
-    width: 100%;
-    min-width: 0;
-    max-width: 100%;
-}
-
-#contact-form input,
-#contact-form button {
-    width: 100%;
-    min-width: 0;
-    max-width: 100%;
-}
-.cta-content span {
-    font-size: 16px;
-}
-
-#contact-form {
-    width: 100%;
-}
-
-#contact-form input,
-#contact-form button {
-    width: 100%;
-    max-width: 100%;
-}
-}
-/* =========================
-   HERO ANIMATION
-   ========================= */
-
-.hero-content {
-    animation: heroContentAppear 0.8s ease forwards;
-}
-
-.hero-visual {
-    animation: heroVisualAppear 1s ease forwards;
-}
-
-
-/* Анимация появления текста */
-
-@keyframes heroContentAppear {
-
-    from {
-        opacity: 0;
-        transform: translateY(30px);
-    }
-
-    to {
-        opacity: 1;
-        transform: translateY(0);
-    }
-
-}
-
-
-/* Анимация появления карточки */
-
-@keyframes heroVisualAppear {
-
-    from {
-        opacity: 0;
-        transform: translateX(40px);
-    }
-
-    to {
-        opacity: 1;
-        transform: translateX(0);
-    }
-
-}
-@keyframes cardFloat {
-
-    0% {
-        transform: translateY(0);
-    }
-
-    50% {
-        transform: translateY(-10px);
-    }
-
-    100% {
-        transform: translateY(0);
-    }
-
-}
-
-/* =========================
-   CONTACT FORM
-   ========================= */
-
-
-.cta-content > p {
-    margin-bottom: 16px;
-
-    font-size: 14px;
-    font-weight: 700;
-    letter-spacing: 2px;
-
-    color: #c7d2fe;
-}
-
-.cta-content h2 {
-    margin-bottom: 20px;
-}
-
-.cta-content span {
-    display: block;
-
-    color: #cbd5e1;
-    font-size: 18px;
-}
-
-
-/* Форма */
-
-#contact-form {
-    display: flex;
-    flex-direction: column;
-    gap: 16px;
-}
-
-#contact-form input {
-    width: 100%;
-
-    padding: 16px 18px;
-
-    background-color: #1e293b;
-    border: 1px solid #475569;
-    border-radius: 10px;
-
-    color: #ffffff;
-    font-size: 16px;
-
-    outline: none;
-
-    transition: border-color 0.3s ease;
-}
-
-#contact-form input:focus {
-    border-color: #818cf8;
-}
-
-#contact-form button {
-    padding: 16px;
-
-    border: none;
-    border-radius: 10px;
-
-    background-color: #ffffff;
-    color: #312e81;
-
-    font-size: 16px;
-    font-weight: 700;
-
-    cursor: pointer;
-
-    transition: transform 0.3s ease;
-}
-
-#contact-form button:hover {
-    transform: translateY(-2px);
-}
-
-#form-message {
-    min-height: 24px;
-
-    color: #c7d2fe;
-}
-
-/* =========================
-   CONTACTS
-   ========================= */
-
-#contacts {
-    margin: 100px 40px;
-    padding: 80px 40px;
-
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 60px;
-
-    text-align: left;
-
-    background-color: #312e81;
-    border-radius: 24px;
-}
-
-.cta-content > p {
-    margin-bottom: 16px;
-
-    font-size: 14px;
-    font-weight: 700;
-    letter-spacing: 2px;
-
-    color: #c7d2fe;
-}
-
-.cta-content h2 {
-    margin-bottom: 20px;
-
-    font-size: 42px;
-}
-
-.cta-content span {
-    display: block;
-
-    color: #cbd5e1;
-    font-size: 18px;
-}
-
-
-/* Форма */
-
-#contact-form {
-    display: flex;
-    flex-direction: column;
-    gap: 16px;
-
-    width: 100%;
-    min-width: 0;
-}
-
-#contact-form input {
-    width: 100%;
-    min-width: 0;
-
-    padding: 16px 18px;
-
-    background-color: #1e293b;
-    border: 1px solid #475569;
-    border-radius: 10px;
-
-    color: #ffffff;
-    font-size: 16px;
-
-    outline: none;
-}
-
-#contact-form input:focus {
-    border-color: #818cf8;
-}
-
-#contact-form button {
-    width: 100%;
-
-    padding: 16px;
-
-    border: none;
-    border-radius: 10px;
-
-    background-color: #ffffff;
-    color: #312e81;
-
-    font-size: 16px;
-    font-weight: 700;
-
-    cursor: pointer;
-}
-
-#form-message {
-    min-height: 24px;
-
-    color: #c7d2fe;
-}
-
-
-
-/* =========================
-   CONTACTS MOBILE
-   ========================= */
-
-@media (max-width: 600px) {
-
-    #contacts {
-        display: flex !important;
-        flex-direction: column !important;
-
-        margin: 60px 20px;
-        padding: 60px 24px;
-
-        gap: 40px;
-
-        text-align: center;
-    }
-
-    .cta-content {
-        width: 100%;
-    }
-
-    .cta-content h2 {
-        font-size: 34px;
-    }
-
-    .cta-content span {
-        font-size: 16px;
-    }
-
-    #contact-form {
-        display: flex;
-        flex-direction: column;
-
-        width: 100%;
-        min-width: 0;
-    }
-
-    #contact-form input,
-    #contact-form button {
-        width: 100%;
-        min-width: 0;
-    }
-
-}
-/* =========================
-   FINAL MOBILE FIX
-   ========================= */
-
-@media (max-width: 600px) {
-
-    main #contacts {
-        display: grid !important;
-        grid-template-columns: minmax(0, 1fr) !important;
-
-        width: auto !important;
-        max-width: none !important;
-        min-width: 0 !important;
-
-        margin-left: 20px !important;
-        margin-right: 20px !important;
-
-        padding-left: 24px !important;
-        padding-right: 24px !important;
-
-        gap: 40px !important;
-    }
-
-    main #contacts .cta-content {
-        width: 100% !important;
-        min-width: 0 !important;
-        max-width: 100% !important;
-    }
-
-    main #contacts #contact-form {
-        display: flex !important;
-        flex-direction: column !important;
-
-        width: 100% !important;
-        min-width: 0 !important;
-        max-width: 100% !important;
-    }
-
-    main #contacts #contact-form input,
-    main #contacts #contact-form button {
-        width: 100% !important;
-        min-width: 0 !important;
-        max-width: 100% !important;
-
-        box-sizing: border-box !important;
-    }
-#faq {
-    padding: 80px 20px;
-}
-
-#faq .section-heading h2 {
-    font-size: 34px;
-}
-
-.faq-question {
-    padding: 20px;
-
-    font-size: 16px;
-}
-
-.faq-answer p {
-    padding: 0 20px 20px;
-}
-}
 /* =========================
    FAQ
    ========================= */
@@ -998,7 +408,6 @@ header nav {
 
 .faq-list {
     max-width: 800px;
-
     margin: 0 auto;
 
     display: flex;
@@ -1063,17 +472,375 @@ header nav {
 
 .faq-item.active .faq-answer {
     max-height: 200px;
-
     opacity: 1;
 }
 
 .faq-item.active .faq-icon {
     transform: rotate(45deg);
 }
+
+
 /* =========================
-   SMOOTH SCROLL
+   CONTACTS
    ========================= */
 
-html {
-    scroll-behavior: smooth;
+#contacts {
+    margin: 100px 40px;
+    padding: 80px 40px;
+
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 60px;
+
+    text-align: left;
+
+    background-color: #312e81;
+    border-radius: 24px;
+}
+
+.cta-content > p {
+    margin-bottom: 16px;
+
+    font-size: 14px;
+    font-weight: 700;
+    letter-spacing: 2px;
+
+    color: #c7d2fe;
+}
+
+.cta-content h2 {
+    margin-bottom: 20px;
+
+    font-size: 42px;
+}
+
+.cta-content span {
+    display: block;
+
+    color: #cbd5e1;
+    font-size: 18px;
+}
+
+#contact-form {
+    width: 100%;
+
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+}
+
+#contact-form input {
+    width: 100%;
+
+    padding: 16px 18px;
+
+    background-color: #1e293b;
+    border: 1px solid #475569;
+    border-radius: 10px;
+
+    color: #ffffff;
+    font-size: 16px;
+
+    outline: none;
+
+    transition: border-color 0.3s ease;
+}
+
+#contact-form input:focus {
+    border-color: #818cf8;
+}
+
+#contact-form button {
+    width: 100%;
+
+    padding: 16px;
+
+    border: none;
+    border-radius: 10px;
+
+    background-color: #ffffff;
+    color: #312e81;
+
+    font-size: 16px;
+    font-weight: 700;
+
+    cursor: pointer;
+
+    transition: transform 0.3s ease;
+}
+
+#contact-form button:hover {
+    transform: translateY(-2px);
+}
+
+#form-message {
+    min-height: 24px;
+
+    color: #c7d2fe;
+}
+
+
+/* =========================
+   FOOTER
+   ========================= */
+
+footer {
+    padding: 40px;
+
+    text-align: center;
+
+    color: #64748b;
+
+    border-top: 1px solid #1e293b;
+}
+
+
+/* =========================
+   ANIMATIONS
+   ========================= */
+
+@keyframes heroContentAppear {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes heroVisualAppear {
+    from {
+        opacity: 0;
+        transform: translateX(40px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+@keyframes cardFloat {
+    0% {
+        transform: translateY(0);
+    }
+
+    50% {
+        transform: translateY(-10px);
+    }
+
+    100% {
+        transform: translateY(0);
+    }
+}
+
+
+/* =========================
+   TABLET
+   ========================= */
+
+@media (max-width: 900px) {
+
+    #about {
+        grid-template-columns: 1fr;
+    }
+
+    .features-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .hero-content h1 {
+        font-size: 48px;
+    }
+}
+
+
+/* =========================
+   MOBILE
+   ========================= */
+
+@media (max-width: 600px) {
+
+    /* HEADER */
+
+    header {
+        position: relative;
+
+        min-height: auto;
+        padding: 24px 20px;
+
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+        justify-content: space-between;
+    }
+
+    .menu-button {
+        display: block;
+    }
+
+    header nav {
+        width: 100%;
+        flex-basis: 100%;
+
+        order: 3;
+
+        flex-direction: column;
+        gap: 20px;
+
+        padding: 0;
+
+        max-height: 0;
+        overflow: hidden;
+        opacity: 0;
+
+        transition:
+            max-height 0.3s ease,
+            opacity 0.3s ease,
+            padding 0.3s ease;
+    }
+
+    header nav.active {
+        max-height: 300px;
+        padding: 20px 0;
+
+        opacity: 1;
+    }
+
+    nav a {
+        font-size: 14px;
+    }
+
+    /* HERO */
+
+    #about {
+        min-height: auto;
+        padding: 80px 20px;
+
+        grid-template-columns: 1fr;
+        gap: 50px;
+    }
+
+    .hero-content h1 {
+        font-size: 40px;
+        letter-spacing: -1px;
+    }
+
+    .hero-description {
+        font-size: 18px;
+    }
+
+    .hero-visual {
+        min-height: 280px;
+    }
+
+    .hero-card {
+        width: 260px;
+    }
+
+
+    /* FEATURES */
+
+    #features {
+        padding: 80px 20px;
+    }
+
+    .section-heading h2 {
+        font-size: 34px;
+    }
+
+    .features-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .features-grid article {
+        padding: 24px;
+    }
+
+    .feature-number {
+        margin-bottom: 40px;
+    }
+
+
+    /* PRICING */
+
+    #pricing {
+        padding: 80px 20px;
+
+        grid-template-columns: 1fr;
+    }
+
+    #pricing h2 {
+        font-size: 34px;
+    }
+
+    #pricing article {
+        padding: 28px;
+    }
+
+
+    /* FAQ */
+
+    #faq {
+        padding: 80px 20px;
+    }
+
+    #faq .section-heading h2 {
+        font-size: 34px;
+    }
+
+    .faq-question {
+        padding: 20px;
+
+        font-size: 16px;
+    }
+
+    .faq-answer p {
+        padding: 0 20px 20px;
+    }
+
+
+    /* CONTACTS */
+
+    #contacts {
+        margin: 60px 20px;
+        padding: 60px 24px;
+
+        display: grid;
+        grid-template-columns: 1fr;
+        gap: 40px;
+
+        text-align: center;
+    }
+
+    .cta-content {
+        width: 100%;
+    }
+
+    .cta-content h2 {
+        font-size: 34px;
+    }
+
+    .cta-content span {
+        font-size: 16px;
+    }
+
+    #contact-form {
+        width: 100%;
+    }
+
+    #contact-form input,
+    #contact-form button {
+        width: 100%;
+    }
+
+
+    /* FOOTER */
+
+    footer {
+        padding: 30px 20px;
+    }
 }
