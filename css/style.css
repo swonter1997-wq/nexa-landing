@@ -1070,3 +1070,10 @@ header nav {
 .faq-item.active .faq-icon {
     transform: rotate(45deg);
 }
+/* =========================
+   SMOOTH SCROLL
+   ========================= */
+
+html {
+    scroll-behavior: smooth;
+}

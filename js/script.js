@@ -1,19 +1,37 @@
+// =========================
+// MOBILE MENU
+// =========================
+
 const menuButton = document.querySelector(".menu-button");
-const nav = document.querySelector("header nav");
-const navLinks = document.querySelectorAll("header nav a");
+const navigation = document.querySelector("header nav");
+const navigationLinks = document.querySelectorAll("header nav a");
+
 
 menuButton.addEventListener("click", function () {
-    nav.classList.toggle("active");
+
+    navigation.classList.toggle("active");
+
 });
 
-navLinks.forEach(function (link) {
+
+navigationLinks.forEach(function (link) {
+
     link.addEventListener("click", function () {
-        nav.classList.remove("active");
+
+        navigation.classList.remove("active");
+
     });
+
 });
+
+
+// =========================
+// CONTACT FORM
+// =========================
 
 const contactForm = document.querySelector("#contact-form");
 const formMessage = document.querySelector("#form-message");
+
 
 contactForm.addEventListener("submit", function (event) {
 
@@ -22,22 +40,39 @@ contactForm.addEventListener("submit", function (event) {
     const name = document.querySelector("#name").value.trim();
     const email = document.querySelector("#email").value.trim();
 
+
     if (name.length < 2) {
-        formMessage.textContent = "Введите имя минимум из 2 символов.";
+
+        formMessage.textContent =
+            "Введите имя минимум из 2 символов.";
+
         return;
     }
+
 
     if (!email.includes("@")) {
-        formMessage.textContent = "Введите корректный email.";
+
+        formMessage.textContent =
+            "Введите корректный email.";
+
         return;
     }
 
-    formMessage.textContent = "Заявка отправлена! Мы свяжемся с вами.";
+
+    formMessage.textContent =
+        "Заявка отправлена! Мы свяжемся с вами.";
 
     contactForm.reset();
 
 });
+
+
+// =========================
+// FAQ
+// =========================
+
 const faqQuestions = document.querySelectorAll(".faq-question");
+
 
 faqQuestions.forEach(function (question) {
 
